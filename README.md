@@ -37,7 +37,7 @@ Aplikasi To-Do List berbasis web ini memungkinkan pengguna untuk menambahkan, me
 
 
 ## Kontributor
-- **Muhammad Rahyan Noorfauzan**
 - **Nur Hidayat**
+- **Muhammad Rahyan Noorfauzan**
 - **Jumiati**
 
