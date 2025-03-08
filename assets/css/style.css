@@ -1,0 +1,299 @@
+/* Color */
+:root {
+    --footer: #222224;
+    --blue: #3396d9;
+    --green: #12ca6e;
+    --red: #ff0137;
+    --rendah: #4caf50;
+    --sedang: #ffc107;
+    --tinggi: #f44336;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+    box-sizing: border-box;
+}
+
+header {
+    margin: auto;
+    width: 80%;
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+header .container .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+header .container .menu .search-container {
+    position: relative;
+    width: 250px;
+}
+
+header .container .menu .search-input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+header .container .menu .search-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+}
+header .container .menu .add-task a {
+    background-color: var(--blue);
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    color: white;
+}
+
+/* Sedang Berlangsung */
+section#berlangsung {
+    margin: auto;
+    width: 80%;
+    margin-top: 3rem;
+}
+section#berlangsung h3 {
+    margin-bottom: 10px;
+}
+section#berlangsung .table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+}
+section#berlangsung table {
+    width: 100%;
+    border-spacing: 0 15px;
+    border-collapse: separate;
+    min-width: 700px;
+}
+section#berlangsung table tr.data {
+    box-shadow: rgba(149, 157, 165, 0.15) 0px 5px 10px;
+    height: 60px;
+}
+section#berlangsung table tr th,
+section#berlangsung table tr td {
+    padding: 0.5rem 1.25rem;
+    text-align: left;
+}
+section#berlangsung .priority {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+section#berlangsung .medium {
+    background-color: var(--sedang);
+    color: #000;
+}
+section#berlangsung .high {
+    background-color: var(--tinggi);
+    color: #fff;
+}
+section#berlangsung .action-buttons {
+    display: flex;
+    gap: 10px;
+    margin: auto;
+    padding: auto;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+section#berlangsung .action-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+}
+section#berlangsung .btn-edit {
+    background-color: var(--blue);
+    color: white;
+}
+section#berlangsung .btn-delete {
+    background-color: var(--red);
+    color: white;
+}
+section#berlangsung .btn-info {
+    background-color: var(--green);
+    color: white;
+    display: none;
+}
+
+section#selesai {
+    margin: auto;
+    width: 80%;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+}
+section#selesai h3 {
+    margin-bottom: 10px;
+}
+section#selesai .table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+}
+section#selesai table {
+    width: 100%;
+    border-spacing: 0 15px;
+    border-collapse: separate;
+    min-width: 700px;
+}
+section#selesai table tr.data {
+    box-shadow: rgba(149, 157, 165, 0.15) 0px 5px 10px;
+    height: 60px;
+}
+section#selesai table tr th,
+section#selesai table tr td {
+    padding: 0.5rem 1.25rem;
+    text-align: left;
+}
+section#selesai .priority {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+section#selesai .medium {
+    background-color: var(--sedang);
+    color: #000;
+}
+section#selesai .high {
+    background-color: var(--tinggi);
+    color: #fff;
+}
+section#selesai .action-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+section#selesai .action-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+section#selesai .btn-delete {
+    background-color: var(--red);
+    color: white;
+}
+section#selesai .btn-info {
+    background-color: var(--green);
+    color: white;
+    display: none;
+}
+footer {
+    background-color: var(--footer);
+    text-align: center;
+    padding: 1.5rem;
+    width: 100%;
+}
+footer p {
+    color: white;
+    font-size: 14px;
+}
+footer p .author {
+    color: var(--green);
+}
+section#berlangsung table td[data-label="Nama Tugas"],
+section#berlangsung table td[data-label="Deskripsi"],
+section#selesai table td[data-label="Nama Tugas"],
+section#selesai table td[data-label="Deskripsi"] {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+@media screen and (max-width: 1150px) {
+    section#berlangsung,
+    section#selesai {
+        width: 95%;
+    }
+    section#berlangsung table,
+    section#selesai table {
+        min-width: 100%;
+    }
+}
+@media screen and (max-width: 975px) {
+    section#berlangsung table th:nth-child(3),
+    section#berlangsung table td:nth-child(3),
+    section#berlangsung table th:nth-child(5),
+    section#berlangsung table td:nth-child(5),
+    section#berlangsung table th:nth-child(6),
+    section#berlangsung table td:nth-child(6),
+    section#selesai table th:nth-child(3),
+    section#selesai table td:nth-child(3),
+    section#selesai table th:nth-child(5),
+    section#selesai table td:nth-child(5),
+    section#selesai table th:nth-child(6),
+    section#selesai table td:nth-child(6) {
+        display: none;
+    }
+    section#berlangsung .btn-info {
+        display: block;
+    }
+    section#selesai .btn-info {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    section#berlangsung table th:nth-child(4),
+    section#berlangsung table td:nth-child(4),
+    section#selesai table th:nth-child(4),
+    section#selesai table td:nth-child(4) {
+        display: none;
+    }
+    section#berlangsung .action-buttons,
+    section#selesai .action-buttons {
+        display: flex;
+        gap: 5px;
+    }
+}
+@media screen and (max-width: 480px) {
+    header {
+        width: 95%;
+        padding: 1rem 1.5rem;
+    }
+    header .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    header .container h2 {
+        margin-bottom: 10px;
+    }
+    header .container .menu {
+        margin-bottom: 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
