@@ -22,7 +22,7 @@
     <header>
         <div class="container">
             <h2>To-Do List</h2>
-            <a href="index.php" class="back">
+            <a href="../index.php" class="back">
                 <i class="fa-solid fa-chevron-left"></i>
                 <span>Kembali</span>
             </a>
