@@ -25,7 +25,7 @@ Aplikasi To-Do List berbasis web ini memungkinkan pengguna untuk menambahkan, me
    ```
 3. **Konfigurasi Database**
    - Buat database baru di MySQL (misal: `todo_list`)
-   - Import file `database.sql` yang terdapat dalam repository
+   - Import file `db.sql` yang terdapat dalam repository
    - Sesuaikan file `koneksi.php` dengan konfigurasi database Anda
 
 4. **Menjalankan Aplikasi**
