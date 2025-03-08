@@ -17,11 +17,11 @@ Aplikasi To-Do List berbasis web ini memungkinkan pengguna untuk menambahkan, me
 ## Instalasi dan Penggunaan
 1. **Clone Repository**
    ```bash
-   git clone https://github.com/username/repository-name.git
+   git clone https://github.com/YayaProject/To-Do-List.git
    ```
 2. **Masuk ke Direktori Proyek**
    ```bash
-   cd repository-name
+   cd To-Do-List
    ```
 3. **Konfigurasi Database**
    - Buat database baru di MySQL (misal: `todo_list`)
