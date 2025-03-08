@@ -8,7 +8,6 @@ Aplikasi To-Do List berbasis web ini memungkinkan pengguna untuk menambahkan, me
 - **Mengedit tugas** yang telah ditambahkan.
 - **Menandai tugas sebagai selesai** dan memindahkannya ke bagian "Selesai".
 - **Menghapus tugas** baik dari daftar tugas aktif maupun selesai.
-- **Pencarian tugas** berdasarkan nama.
 
 ## Teknologi yang Digunakan
 - **Frontend:** HTML, CSS, JavaScript
@@ -36,28 +35,9 @@ Aplikasi To-Do List berbasis web ini memungkinkan pengguna untuk menambahkan, me
      http://localhost/todo-list/
      ```
 
-## Struktur Proyek
-```
-📁 todo-list/
-├── 📂 assets/       # Folder untuk CSS, JS, dan gambar
-├── 📂 database/     # Folder untuk file SQL
-├── 📂 includes/     # Folder untuk file koneksi dan helper
-├── index.php        # Halaman utama
-├── tambah-tugas.php # Halaman untuk menambahkan tugas
-├── edit-tugas.php   # Halaman untuk mengedit tugas
-├── proses-tambah.php  # Proses menambah tugas
-├── proses-edit.php    # Proses mengedit tugas
-├── proses-selesai.php # Proses menandai tugas selesai
-├── proses-hapus.php   # Proses menghapus tugas
-├── koneksi.php        # Konfigurasi database
-└── README.md       # Dokumentasi proyek
-```
 
 ## Kontributor
 - **Muhammad Rahyan Noorfauzan**
 - **Nur Hidayat**
 - **Jumiati**
-
-## Lisensi
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 
