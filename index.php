@@ -1,6 +1,30 @@
 <?php
 include 'backend/koneksi.php';
+
+if (isset($_GET['json'])) {
+    $result = $conn->query("SELECT * FROM tugas ORDER BY id ASC");
+    $tasks = [];
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $tasks[] = [
+                'id' => $row['id'],
+                'nama_tugas' => $row['nama_tugas'],
+                'deskripsi_tugas' => $row['deskripsi_tugas'],
+                'deadline' => date("d-m-Y", strtotime($row['deadline'])),
+                'kategori' => $row['kategori'],
+                'prioritas' => $row['prioritas'],
+                'status' => $row['status']
+            ];
+        }
+    }
+
+    header('Content-Type: application/json');
+    echo json_encode($tasks);
+    exit;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -163,11 +187,5 @@ include 'backend/koneksi.php';
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="assets/js/script.js"></script>
-    <script>
-
-    </script>
-
-
-</body>
-
+    </body>
 </html>
