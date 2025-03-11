@@ -21,7 +21,7 @@
 <body>
     <header>
         <div class="container">
-            <h2>To-Do List</h2>
+            <h3>To-Do List <span>/ Tambah Tugas</span></h3>
             <a href="../index.php" class="back">
                 <i class="fa-solid fa-chevron-left"></i>
                 <span>Kembali</span>

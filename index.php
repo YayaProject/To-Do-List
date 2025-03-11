@@ -28,6 +28,13 @@ if (isset($_GET['json'])) {
 <!DOCTYPE html>
 <html lang="id">
 
+<div class="welcome-popup">
+        <h1>Selamat datang di Web To-Do List, masukkan nama anda terlebih dahulu!</h1>
+        <input type="text" name="user" id="user" placeholder="Masukkan nama anda" required>
+        <input type="submit" name="submit" id="submit-user">
+    </div>
+<div class="overlay-blur"></div>
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,6 +53,7 @@ if (isset($_GET['json'])) {
 <body>
     <header>
         <div class="container">
+            <p>Selamat Datang, <span id="new-user"></span>!</p>
             <h2>To-Do List</h2>
             <div class="menu">
                 <div class="add-task">
