@@ -38,7 +38,7 @@ $tugas = $result->fetch_assoc();
 <body>
     <header>
         <div class="container">
-            <h2>To-Do List</h2>
+            <h3>To-Do List <span>/ Edit Tugas</span></h3>
             <a href="../index.php" class="back">
                 <i class="fa-solid fa-chevron-left"></i>
                 <span>Kembali</span>
@@ -82,7 +82,6 @@ $tugas = $result->fetch_assoc();
             </form>
         </div>
     </section>
- 
     <footer>
         <p>
             Author: <span class="author">Muhammad Rahyan Noorfauzan</span>,
