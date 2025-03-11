@@ -1,6 +1,7 @@
 <?php
-require 'koneksi.php'; 
+require 'koneksi.php';
 
+// Handler untuk Web
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama_tugas = trim($_POST["nama_tugas"]);
     $deskripsi_tugas = trim($_POST["deskripsi_tugas"]);
@@ -17,11 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <link rel='stylesheet' href='../assets/css/style.css' />
             <link rel='preconnect' href='https://fonts.googleapis.com' />
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-    <link
-      href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
-      rel='stylesheet'
-    />
+            <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+            <link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet' />
         </head>
         <body>
             <script>
@@ -30,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 text: 'Semua Kolom Wajib Diisi',
                 icon: 'error',
                 allowOutsideClick: false,
-                
             }).then(() => {
                 window.history.back(); // Redirect setelah tombol OK ditekan
             });
@@ -54,11 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <link rel='stylesheet' href='../assets/css/style.css' />
             <link rel='preconnect' href='https://fonts.googleapis.com' />
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-    <link
-      href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
-      rel='stylesheet'
-    />
+            <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+            <link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet' />
         </head>
         <body>
             <script>
@@ -79,10 +73,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         Swal.fire('Error!', 'Gagal menambahkan tugas.', 'error');
         </script>";
     }
-} else {
-    echo "<script>
-    Swal.fire('Akses Ditolak!', 'Anda tidak memiliki izin.', 'error');
-    window.location = '../index.php';
-    </script>";
+}
+
+// Handler untuk Postman
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $data = json_decode(file_get_contents("php://input"), true);
+
+    if (empty($data)) {
+        header("Content-Type: application/json");
+        echo json_encode(["status" => "error", "message" => "Data tidak valid"]);
+        exit();
+    }
+
+    $nama_tugas = trim($data['nama_tugas']);
+    $deskripsi_tugas = trim($data['deskripsi_tugas']);
+    $deadline = $data['deadline'];
+    $prioritas = $data['prioritas'];
+    $kategori = $data['kategori'];
+
+    // Validasi data
+    if (empty($nama_tugas) || empty($deskripsi_tugas) || empty($deadline) || empty($prioritas) || empty($kategori)) {
+        header("Content-Type: application/json");
+        echo json_encode(["status" => "error", "message" => "Semua kolom wajib diisi"]);
+        exit();
+    }
+
+    $query = "INSERT INTO tugas (nama_tugas, deskripsi_tugas, deadline, prioritas, kategori) 
+              VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("sssss", $nama_tugas, $deskripsi_tugas, $deadline, $prioritas, $kategori);
+
+    if ($stmt->execute()) {
+        header("Content-Type: application/json");
+        echo json_encode(["status" => "success", "message" => "Tugas berhasil ditambahkan"]);
+        exit();
+    } else {
+        header("Content-Type: application/json");
+        echo json_encode(["status" => "error", "message" => "Gagal menambahkan tugas"]);
+        exit();
+    }
+}
+
+// Handler untuk metode request tidak valid
+if ($_SERVER["REQUEST_METHOD"] != "POST") {
+    header("Content-Type: application/json");
+    echo json_encode(["status" => "error", "message" => "Metode request tidak valid"]);
+    exit();
 }
 ?>
