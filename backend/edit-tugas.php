@@ -82,16 +82,7 @@ $tugas = $result->fetch_assoc();
             </form>
         </div>
     </section>
-    <div id="overlay"></div>
-    <!-- Popup Tambah Kategori -->
-    <div id="popupKategori" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <h3>Tambah Kategori Baru</h3>
-            <input type="text" id="inputKategori" placeholder="Nama kategori" />
-            <button id="simpanKategori">Simpan</button>
-        </div>
-    </div>
+ 
     <footer>
         <p>
             Author: <span class="author">Muhammad Rahyan Noorfauzan</span>,
