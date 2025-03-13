@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 <script>
                 Swal.fire({
                     title: 'Berhasil!',
-                    text: 'Tugas berhasil dihapus.',
+                    text: 'Tugas berhasil dihapus!',
                     icon: 'success',
                     allowOutsideClick: false
                 }).then(() => {
@@ -57,22 +57,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
         $query = "DELETE FROM tugas WHERE id=$id";
         if ($conn->query($query) === TRUE) {
             header("Content-Type: application/json");
-            echo json_encode(["status" => "success", "message" => "Tugas berhasil dihapus"]);
+            echo json_encode(["status" => "success", "message" => "Tugas berhasil dihapus!"]);
             exit();
         } else {
             header("Content-Type: application/json");
-            echo json_encode(["status" => "error", "message" => "Gagal menghapus tugas"]);
+            echo json_encode(["status" => "error", "message" => "Gagal menghapus tugas!"]);
             exit();
         }
     } else {
         header("Content-Type: application/json");
-        echo json_encode(["status" => "error", "message" => "ID tugas tidak ditemukan"]);
+        echo json_encode(["status" => "error", "message" => "ID tugas tidak ditemukan!"]);
         exit();
     }
 }
 
 // Handler metode request tidak valid
 header("Content-Type: application/json");
-echo json_encode(["status" => "error", "message" => "Metode request tidak valid"]);
+echo json_encode(["status" => "error", "message" => "Metode request tidak valid!"]);
 exit();
 ?>

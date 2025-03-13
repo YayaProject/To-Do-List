@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <script>
             Swal.fire({
                 title: 'Gagal!',
-                text: 'Semua Kolom Wajib Diisi',
+                text: 'Semua kolom wajib diisi!',
                 icon: 'error',
                 allowOutsideClick: false,
             }).then(() => {
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <script>
             Swal.fire({
                 title: 'Berhasil!',
-                text: 'Tugas berhasil diperbarui.',
+                text: 'Tugas berhasil diperbarui!',
                 icon: 'success',
                 allowOutsideClick: false
             }).then(() => {
@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         echo "<script>
-        Swal.fire('Error!', 'Gagal memperbarui tugas.', 'error');
+        Swal.fire('Error!', 'Gagal memperbarui tugas!', 'error');
         </script>";
     }
 }

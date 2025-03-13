@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <script>
             Swal.fire({
                 title: 'Gagal!',
-                text: 'Semua Kolom Wajib Diisi',
+                text: 'Semua kolom wajib diisi!',
                 icon: 'error',
                 allowOutsideClick: false,
             }).then(() => {
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <script>
             Swal.fire({
                 title: 'Berhasil!',
-                text: 'Tugas berhasil ditambahkan.',
+                text: 'Tugas berhasil ditambahkan!',
                 icon: 'success',
                 allowOutsideClick: false
             }).then(() => {
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         echo "<script>
-        Swal.fire('Error!', 'Gagal menambahkan tugas.', 'error');
+        Swal.fire('Error!', 'Gagal menambahkan tugas!', 'error');
         </script>";
     }
 }
@@ -105,11 +105,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         header("Content-Type: application/json");
-        echo json_encode(["status" => "success", "message" => "Tugas berhasil ditambahkan"]);
+        echo json_encode(["status" => "success", "message" => "Tugas berhasil ditambahkan!"]);
         exit();
     } else {
         header("Content-Type: application/json");
-        echo json_encode(["status" => "error", "message" => "Gagal menambahkan tugas"]);
+        echo json_encode(["status" => "error", "message" => "Gagal menambahkan tugas!"]);
         exit();
     }
 }
@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Handler untuk metode request tidak valid
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header("Content-Type: application/json");
-    echo json_encode(["status" => "error", "message" => "Metode request tidak valid"]);
+    echo json_encode(["status" => "error", "message" => "Metode request tidak valid!"]);
     exit();
 }
 ?>

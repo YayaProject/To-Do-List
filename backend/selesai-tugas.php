@@ -24,7 +24,7 @@ if (isset($_GET['id'])) {
             <script>
             Swal.fire({
                 title: 'Berhasil!',
-                text: 'Tugas berhasil diselesaikan.',
+                text: 'Tugas berhasil diselesaikan!',
                 icon: 'success',
                 allowOutsideClick: false
             }).then(() => {
